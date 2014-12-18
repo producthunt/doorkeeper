@@ -13,7 +13,7 @@ module Doorkeeper
                 options = doorkeeper_unauthorized_render_options
               else
                 @error = OAuth::ForbiddenTokenResponse.from_scopes(doorkeeper_for.scopes)
-                error_status = :forbidden
+                error_status = :unauthorized
                 options = doorkeeper_forbidden_render_options
               end
               headers.merge!(@error.headers.reject { |k, v| ['Content-Type'].include? k })

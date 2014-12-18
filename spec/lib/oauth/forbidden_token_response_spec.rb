@@ -10,7 +10,7 @@ module Doorkeeper::OAuth
     end
 
     describe '#status' do
-      it { expect(subject.status).to eq(:forbidden) }
+      it { expect(subject.status).to eq(:unauthorized) }
     end
 
     describe :from_scopes do

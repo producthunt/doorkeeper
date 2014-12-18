@@ -6,12 +6,12 @@ module Doorkeeper
       end
 
       def initialize(attributes = {})
-        super(attributes.merge(name: :invalid_scope, state: :forbidden))
+        super(attributes.merge(name: :invalid_scope, state: :unauthorized))
         @scopes = attributes[:scopes]
       end
 
       def status
-        :forbidden
+        :unauthorized
       end
 
       def headers
